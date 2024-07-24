@@ -17,3 +17,11 @@ def post():
 @app.put("/")
 def put():
     return {"message":"Hello world I am ready to edit something"}
+
+@app.get("/items")
+async def list_items():
+    return {"message":"List items routes"}
+
+@app.get("/items/{items_id}")
+async def get_items(items_id:str):
+    return {"item_id":items_id}
